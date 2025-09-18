@@ -1,0 +1,20 @@
+{
+  "name": "PHP 8.3 & MariaDB 10.6.22 Dev Container",
+  "image": "mcr.microsoft.com/devcontainers/php:8.3",
+  "features": {},
+  "services": {
+    "mariadb": {
+      "image": "mariadb:10.6.22",
+      "restart": "unless-stopped",
+      "env": {
+        "MYSQL_ROOT_PASSWORD": "example",
+        "MYSQL_DATABASE": "testdb"
+      },
+      "ports": [
+        "3306:3306"
+      ]
+    }
+  },
+  "forwardPorts": [8080],
+  "postCreateCommand": "php --version"
+}
